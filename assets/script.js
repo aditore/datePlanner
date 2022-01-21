@@ -1,4 +1,8 @@
+/* variables */
 var showCurrentDay = $('#currentDay');
+var timeBlock = $('.container')
+
+/* function */
 
 //show current day (function)
 function displayCurrentDay() {

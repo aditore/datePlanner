@@ -3,7 +3,7 @@ var showCurrentDay = $('#currentDay');
 var timeBlock = $('.container')
 
 /* function */
-//begin function to save to local storage
+//begin function when document loads
 $(document).ready(function () {
     //save button click
     $(".saveBtn").on("click", function () {
@@ -13,6 +13,35 @@ $(document).ready(function () {
         //save to local storage
         localStorage.setItem(time, inputText);
     })
+
+    function whatTime() {
+        //get number of hours within day
+        var checkHour = moment().hour();
+        console.log(checkHour);
+        //loop through time-blocks //1 hour = 1
+        $('.time-block').each(function () {
+            var timeBlockParse = parseInt($(this).attr('id').split('h')[1]);
+            console.log(this);
+            console.log(timeBlockParse);
+            //check time and add style to background
+            if (timeBlockParse < checkHour) {
+                $(this).addClass('past');
+                $(this).removeClass('present');
+                $(this).removeClass('future');
+            } else if (timeBlockParse === checkHour) {
+                $(this).removeClass('past');
+                $(this).addClass('present');
+                $(this).removeClass('future');
+            } else {
+                $(this).removeClass('past');
+                $(this).removeClass('present');
+                $(this).addClass('future');
+            }
+        }) 
+    }
+    
+    //run function
+    whatTime();
 })
 
 

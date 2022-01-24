@@ -21,6 +21,7 @@ $(document).ready(function () {
         //loop through time-blocks //1 hour = 1
         $('.time-block').each(function () {
             var timeBlockParse = parseInt($(this).attr('id').split('h')[1]);
+            //checking that values are both numbers
             console.log(this);
             console.log(timeBlockParse);
             //check time and add style to background

@@ -39,7 +39,16 @@ $(document).ready(function () {
             }
         }) 
     }
-    
+    //get an event from local storage if any event has been saved
+    $('#h9 .description').val(localStorage.getItem('h9'));
+    $('#h10 .description').val(localStorage.getItem('h10'));
+    $('#h11 .description').val(localStorage.getItem('h11'));
+    $('#h12 .description').val(localStorage.getItem('h12'));
+    $('#h13 .description').val(localStorage.getItem('h13'));
+    $('#h14 .description').val(localStorage.getItem('h14'));
+    $('#h15 .description').val(localStorage.getItem('h15'));
+    $('#h16 .description').val(localStorage.getItem('h16'));
+    $('#h17 .description').val(localStorage.getItem('h17'));   
     //run function
     whatTime();
 })
